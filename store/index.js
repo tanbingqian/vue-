@@ -1,7 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex);
+
+let selectModule = ({
+   actions:{
+     getListAction(){
+       axios.get('https://easy-mock.com/mock/5d22f083d5078958511f5cd4/example/mock/594f5d4b9adc231f3569be76/list/list').then((data)=>{
+         console.log(data)
+       }).catch((error)=>{
+         console.log(error)
+       })
+     }
+   }
+})
+//没放到modules模块的时候这样取值  this.$store.state.tite
+//放到modules模块之后这样取值 this.$store.state.selectModule.title
 
 //定义一个容器
 let store = new Vuex.Store({
@@ -43,6 +58,9 @@ let store = new Vuex.Store({
        textAction(context,obj){
            console.log(obj)
        }
+     },
+     modules:{
+       selectModule
      }
 })
 
