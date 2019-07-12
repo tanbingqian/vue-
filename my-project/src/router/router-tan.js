@@ -111,6 +111,22 @@ export default [
     meta:{
       title:'axiosTest'
     }
+  },
+  {
+    path:'/:lang/axiosTest2',
+    name:'axiosTest2',
+    component:()=>import('@/components/axiosTest2'),
+    meta:{
+      title:'axiosTest2'
+    }
+  },
+  {
+    path:'/:lang/axiosTest3',
+    name:'axiosTest3',
+    component:()=>import('@/components/axiosTest3'),
+    meta:{
+      title:'axiosTest3'
+    }
   }
 
 ]
